@@ -148,13 +148,14 @@ function bodyScrollingToggle(){
 
     function popupToggle() {
         popup.classList.toggle("open");
-        // bodyScrollingToggle();
+        bodyScrollingToggle();
     }
 
     function popupSlideshow(){
         const imgSrc = screenshots[slideIndex];
         const popupImg = popup.querySelector(".pp-img");
         /*activate loader until the popupimage loaded*/
+        popup.querySelector(".pp-loader").classList.add("active");
         popupImg.src=imgSrc;
         popupImg.onload = () =>{
             // deactivate loader after the popupimg loaded
